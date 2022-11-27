@@ -7,14 +7,19 @@ public class Audio extends Pista {
     public Audio() {
     }
 
-    public Audio(String autor, String titulo, int duracion,int repro) {
-        super(titulo, duracion,repro);
+    public Audio(String autor) {
+        this.autor = autor;
+    }
+
+    public Audio(String autor, String titulo, int duracion, int reproducciones) {
+        super(titulo, duracion, reproducciones);
         this.autor = autor;
     }
 
     public String getAutor() {
         return autor;
     }
+
     /**
      *
      * @return
@@ -24,7 +29,7 @@ public class Audio extends Pista {
         return 
                 "\nTitulo:"+ titulo +
                 "\nAutor:" + autor +
-                "\nDuracion:"+duracion+
-                "\nReproducciones:" + repro;
+                "\nDuracion:" + duracion +
+                "\nNo. reproducciones:" + reproducciones;
     }
 }

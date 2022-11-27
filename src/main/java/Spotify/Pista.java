@@ -3,15 +3,19 @@ package Spotify;
 public class Pista {
     protected String titulo;
     protected int duracion;
-    protected int repro;
+    protected int reproducciones;
 
     public Pista() {
     }
-    
+
     public Pista(String titulo, int duracion, int reproducciones) {
         this.titulo = titulo;
         this.duracion = duracion;
-        this.repro = reproducciones;
+        this.reproducciones = reproducciones;
+    }
+
+    public int getReproducciones() {
+        return reproducciones;
     }
 
     public String getTitulo() {
@@ -21,9 +25,7 @@ public class Pista {
     public int getDuracion() {
         return duracion;
     }
-    public int getReproducciones(){
-        return repro;
-    }
+
     
     /**
      *
@@ -33,7 +35,7 @@ public class Pista {
     public String toString() {
         return 
                 "\nTitulo:" + titulo +
-                "\nDuracion:" + duracion+
-                "\nReproducciones:" + repro;
+                "\nDuracion:" + duracion +
+                "\nNo. reproducciones:" + reproducciones;
     }
 }

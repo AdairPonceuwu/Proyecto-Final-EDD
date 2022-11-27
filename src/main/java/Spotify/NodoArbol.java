@@ -9,5 +9,11 @@ package Spotify;
  * @author Usuario
  */
 public class NodoArbol {
-    
+    Pista pista;
+    NodoArbol hIzquierdo, hDerecho;
+    public NodoArbol(Pista pista){
+        this.pista=pista;
+        this.hIzquierdo=null;
+        this.hDerecho=null;
+    }
 }

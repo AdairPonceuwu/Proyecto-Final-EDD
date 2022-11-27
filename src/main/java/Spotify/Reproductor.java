@@ -8,7 +8,8 @@ public class Reproductor {
     LinkedList<Video> listaVideo = new LinkedList<>();
     ListIterator<Audio> itA = listaAudio.listIterator();
     ListIterator<Video> itV = listaVideo.listIterator();
-
+    arbolbin b = new arbolbin();
+    arbolbin v = new arbolbin();
     Audio adio;
     Video vdio;
 
@@ -28,23 +29,28 @@ public class Reproductor {
         if (opcion == 1) {
             System.out.println("\nDatos generales del AUDIO");
             System.out.println("Titulo: ");
-            String t = s.next();
+            String t = s.nextLine();
             System.out.println("Autor: ");
-            String a = s.next();
+            String a = s.nextLine();
             System.out.println("Duracion: ");
             int d = s.nextInt();
-            adio = new Audio(a, t, d);
+            System.out.println("No, reproducciones: ");
+            int r = s.nextInt();
+            adio = new Audio(a, t, d, r);
             listaAudio.addFirst(adio);
+            b.insertar(adio);
 
         } else if (opcion == 2) {
             System.out.println("\nDatos generales del VIDEO");
             System.out.println("Titulo: ");
-            String t = s.next();
+            String t = s.nextLine();
             System.out.println("Duracion: ");
             int d = s.nextInt();
+            System.out.println("No, reproducciones: ");
+            int r = s.nextInt();
             System.out.println("Formato: ");
-            String f = s.next();
-            vdio = new Video(f, t, d);
+            String f = s.nextLine();
+            vdio = new Video(f, t, d, r);
             listaVideo.addFirst(vdio);
         }
     }
@@ -54,24 +60,30 @@ public class Reproductor {
         if (opcion == 1) {
             System.out.println("\nDatos generales del AUDIO");
             System.out.println("Titulo: ");
-            String t = s.next();
+            String t = s.nextLine();
             System.out.println("Autor: ");
-            String a = s.next();
+            String a = s.nextLine();
             System.out.println("Duracion: ");
             int d = s.nextInt();
-            adio = new Audio(a, t, d);
+            System.out.println("No, reproducciones: ");
+            int r = s.nextInt();
+            adio = new Audio(a, t, d, r);
             listaAudio.addLast(adio);
+            b.insertar(adio);
 
         } else if (opcion == 2) {
             System.out.println("\nDatos generales del VIDEO");
             System.out.println("Titulo: ");
-            String t = s.next();
+            String t = s.nextLine();
             System.out.println("Duracion: ");
             int d = s.nextInt();
+            System.out.println("No, reproducciones: ");
+            int r = s.nextInt();
             System.out.println("Formato: ");
-            String f = s.next();
-            vdio = new Video(f, t, d);
+            String f = s.nextLine();
+            vdio = new Video(f, t, d, r);
             listaVideo.addLast(vdio);
+            v.insertar(vdio);
         }
     }
 
@@ -189,6 +201,20 @@ public class Reproductor {
         for (itV = listaVideo.listIterator(); itV.hasNext();) {
             System.out.println(itV.next());
         }
+    }
+
+    public void mostrarRanking() {
+        System.out.println("======================");
+        System.out.println("|   Trending audios    |");
+        System.out.println("======================");
+        b.estoNoEsInorden(b.Obten_raiz());
+    }
+    
+       public void mostrarRankingV() {
+        System.out.println("======================");
+        System.out.println("|   Trending videos    |");
+        System.out.println("======================");
+        v.estoNoEsInorden(v.Obten_raiz());
     }
 
 }

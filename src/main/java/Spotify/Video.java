@@ -7,8 +7,12 @@ public class Video extends Pista {
     public Video() {
     }
 
-    public Video(String formato, String titulo, int duracion) {
-        super(titulo, duracion);
+    public Video(String formato) {
+        this.formato = formato;
+    }
+
+    public Video(String formato, String titulo, int duracion, int reproducciones) {
+        super(titulo, duracion, reproducciones);
         this.formato = formato;
     }
 
@@ -21,6 +25,7 @@ public class Video extends Pista {
           return
                 "\nTitulo:"+ titulo +
                 "\nDuracion:"+ duracion +
+                "\nNo. reproducciones:" + reproducciones +
                 "\nFormato:" + formato;
     }
     

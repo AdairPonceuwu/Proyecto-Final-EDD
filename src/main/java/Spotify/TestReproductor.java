@@ -142,7 +142,9 @@ public class TestReproductor {
                     break;
                 case 8://Mostrar listas de reproduccion (todas las pistas)
                     rpdtor.mostrarListas();
-                    break;
+                    rpdtor.mostrarRanking();
+                    rpdtor.mostrarRankingV();
+                    break;                   
                 case 9://Salir
                     System.out.println("Saliendo...");
                     break;
